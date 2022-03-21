@@ -1,0 +1,322 @@
+@import "./src/styles/_settings";
+.Navbar {
+  // variables
+  $navbar-height: 50px;
+  // $general-bg: $general-bg;
+  // $white-bg: $SecondaryColor;
+
+  .navbar {
+    box-shadow: 0px 4px 8px rgba(96, 97, 112, 0.16);
+  }
+  .aether-CompanyMenu {
+    img {
+      padding: 0px 9px;
+    }
+    span {
+      padding: 0px 9px;
+    }
+  }
+  .aether {
+    &-title {
+      font-family: "Inter", sans-serif !important;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: $primaryColor;
+      text-decoration: none;
+      margin-left: 7rem;
+      padding-top: 1.3rem;
+      padding-bottom: 0.3125rem;
+    }
+
+    &-bgColor {
+      background: $SecondaryColor !important;
+      max-height: $navbar-height;
+    }
+
+    &-companyTitle {
+      height: 1.2rem;
+
+      &-Alignment {
+        margin-top: 1rem;
+        margin-left: -9rem;
+      }
+
+      &-mlr {
+        margin-right: 3rem;
+        margin-left: 3rem;
+      }
+    }
+
+    &-droparrow {
+      margin: 4px 0px 0px 10px;
+    }
+
+    &-SearchBox {
+      height: $navbar-height;
+      background: $general-bg !important;
+      border: none !important;
+
+      &-div {
+        margin-right: 20px;
+      }
+
+      &-Alignment {
+        max-width: 300px;
+      }
+
+      &-bgColor {
+        background: $general-bg;
+        height: auto;
+      }
+    }
+
+    &-ControlsMenu {
+      margin-top: 15px;
+      background: $SecondaryColor;
+      width: 253px;
+
+      .mat-menu-panel {
+        border-radius: 0px;
+      }
+
+      &_navCard {
+        background: $SecondaryColor;
+        margin-left: -10px;
+        border-top: 1px solid transparent !important;
+        border-radius: 0rem 0rem 0.8rem 0.8rem !important;
+        margin-left: 4rem;
+        width: 15rem !important;
+        height: fit-content;
+      }
+      //
+      // &-triangle::after {
+      //   content: "";
+      //   position: absolute;
+      //   right: 13px;
+      //   top: 9px;
+      //   width: 0;
+      //   height: 0;
+      //   border-style: solid;
+      //   border-width: 0 13px 20px 13px;
+      //   border-color: transparent transparent $SecondaryColor transparent;
+      //   z-index: 9998;
+      // }
+
+      &-Title {
+        font-weight: 600;
+      }
+    }
+
+    &-CompanyMenu {
+      margin-top: 19px;
+
+      &-UnprovisionedDevices {
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+
+    &-UserCard {
+      margin-top: 12px;
+      width: 220px;
+      text-align: center;
+      &-triangle::after {
+        content: "";
+        position: absolute;
+        right: 13px;
+        top: 26px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 13px 20px 13px;
+        border-color: transparent transparent $SecondaryColor transparent;
+        z-index: 9998;
+      }
+      &-ppicHolder {
+        margin-top: 24px;
+        text-align: center;
+        &-ppic {
+          height: 60px;
+          width: 60px;
+          &-active {
+            position: absolute;
+            border: 3px solid $SecondaryColor;
+            border-radius: 12 px;
+            bottom: 12px;
+            right: -5px;
+            height: 22px;
+          }
+        }
+      }
+      &-flName {
+        margin-top: 12px;
+        color: $Shade_11;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 600;
+        &-email {
+          color: $Shade_10;
+          font-family: Inter;
+          font-weight: 400;
+          font-size: 12px;
+        }
+        &-logout {
+          justify-content: center;
+          color: $primaryColor;
+          font-family: Inter;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .menu {
+    padding: 10px;
+    .img-bg {
+      margin-right: 5px;
+      background: $general-bg;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .icon {
+        height: 14px;
+        width: 14px;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        &.admin-link {
+          background-image: url(/assets/SideCol-Navbar/admin.svg);
+        }
+        &.device-sim-link {
+          background-image: url(/assets/SideCol-Navbar/devices.svg);
+        }
+        &.services-link {
+          background-image: url(/assets/SideCol-Navbar/services.svg);
+        }
+        &.small-cells-link {
+          background-image: url(/assets/SideCol-Navbar/smallCells.svg);
+        }
+        &.device-groups-link {
+          background-image: url(/assets/SideCol-Navbar/deviceGroups.svg);
+        }
+        &.slices-link {
+          background-image: url(/assets/SideCol-Navbar/slices.svg);
+        }
+        &.audit-link {
+          background-image: url(/assets/SideCol-Navbar/slices.svg);
+        }
+      }
+      .label {
+        color: $Shade_11;
+        font-family: "Inter", sans-serif;
+        font-size: 14px !important;
+        font-weight: 500;
+        margin-left: -20px;
+      }
+    }
+
+    &:hover {
+      border-radius: 4px;
+      background: $general-bg;
+      .img-bg {
+        background: $primaryColor;
+        .icon {
+          &.admin-link {
+            background-image: url(/assets/SideCol-Navbar/admin-active.svg);
+          }
+          &.device-sim-link {
+            background-image: url(/assets/SideCol-Navbar/devices-active.svg);
+          }
+          &.services-link {
+            background-image: url(/assets/SideCol-Navbar/services-active.svg);
+          }
+          &.small-cells-link {
+            background-image: url(/assets/SideCol-Navbar/smallCells-active.svg);
+          }
+          &.device-groups-link {
+            background-image: url(/assets/SideCol-Navbar/deviceGroups-active.svg);
+          }
+          &.slices-link {
+            background-image: url(/assets/SideCol-Navbar/slices-active.svg);
+          }
+          &.audit-link {
+            background-image: url(/assets/SideCol-Navbar/slices-active.svg);
+          }
+        }
+      }
+      .label {
+        font-family: Inter;
+        color: $primaryColor;
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  ::placeholder {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 12px;
+    color: $Shade_2;
+  }
+
+  // .aether-dropdown-alignment {
+  //   margin-left: 30px !important;
+  // }
+
+  // .dialog-arrow {
+  //   // border-color: transparent;
+  //   border-color: red;
+  //   border-bottom-color: $SecondaryColor;
+  //   border-style: dashed dashed solid;
+  //   border-width: 0 8.5px 8.5px;
+  //   position: absolute;
+  //   top: 37px;
+  //   z-index: 1001;
+  //   height: 0;
+  //   width: 0;
+  //   -webkit-animation: gb__a 25ms;
+  //   animation: gb__a 25ms;
+  //   filter: drop-shadow( 0 -2px 1px rgba(0,0,0,.05));
+  // }
+
+  // @-webkit-keyframes gb__a{0%{opacity:0}50%{opacity:1}}
+  // @keyframes gb__a{0%{opacity:0}50%{opacity:1}}
+
+  .example-card {
+    max-width: 200px;
+    margin: 30px;
+  }
+
+  .extra-margin {
+    margin-left: 20px !important;
+  }
+
+  .ml-only {
+    margin-left: 3rem !important;
+  }
+
+  .ml2-only {
+    margin-left: 2rem !important;
+  }
+
+  .ml1-only {
+    margin-left: 1rem !important;
+  }
+
+  .mr2-5-only {
+    margin-right: 2.5rem !important;
+  }
+}

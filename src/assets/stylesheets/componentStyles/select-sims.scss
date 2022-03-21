@@ -1,0 +1,69 @@
+/*
+ * SPDX-FileCopyrightText: 2022-present Open Networking Foundation <info@opennetworking.org>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+.select-sim {
+  &-title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.0375em;
+    color: $Shade_10;
+  }
+
+  &-close {
+    cursor: pointer;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: right;
+    color: $AlertCritical;
+    margin-left: -1rem;
+  }
+
+  &-container {
+    border: 1px solid transparent;
+    border-radius: 6px;
+    flex-wrap: wrap;
+    width: 40rem;
+    background: $Shade_0;
+
+    &-spacings {
+      padding: 10px;
+    }
+
+    &-simHolder {
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background-color: $SecondaryColor;
+      padding: 10px 30px 10px 10px;
+    }
+  }
+
+  &-finalButtons {
+    float: right;
+    padding-bottom: 23px !important;
+
+    &-cancel {
+      padding: 12px 60px 12px 12px;
+      border: 1px solid $primaryColor;
+      border-radius: 4px;
+      color: $primaryColor;
+      background: $SecondaryColor;
+    }
+
+    &-select {
+      color: $SecondaryColor;
+      border: transparent;
+      border-radius: 4px;
+      padding: 13px 60px 13px 12px;
+      background: $primaryColor;
+    }
+  }
+}

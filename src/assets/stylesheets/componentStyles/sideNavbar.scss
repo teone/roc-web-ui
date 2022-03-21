@@ -1,0 +1,375 @@
+/*
+ * SPDX-FileCopyrightText: 2022-present Open Networking Foundation <info@opennetworking.org>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+.sideNavbar {
+  &_navCard {
+    background: $SecondaryColor;
+    // margin-left: -10px;
+    border-top: 1px solid transparent !important;
+    border-radius: 0.5rem !important;
+    margin-left: 0rem !important;
+    // width: 15rem !important;
+    height: fit-content;
+
+    // &-triangle::after {
+    //   content: "";
+    //   position: absolute;
+    //   right: 13px;
+    //   top: 9px;
+    //   width: 0;
+    //   height: 0;
+    //   border-style: solid;
+    //   border-width: 0 13px 20px 13px;
+    //   border-color: transparent transparent $SecondaryColorfff transparent;
+    //   z-index: 9998;
+    // }
+
+    &_siteSelector {
+      color: $primaryColor;
+      font-family: "Inter", sans-serif;
+      font-size: 12px !important;
+      font-weight: 700;
+      margin-left: -10px;
+      border: 1px solid $primaryColor;
+      border-radius: 4px;
+    }
+
+    &_headings {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px !important;
+      line-height: 18px;
+      letter-spacing: 0.0375em;
+      text-transform: uppercase;
+      margin-bottom: 0px !important;
+      margin-left: -13px;
+    }
+  }
+
+  &_optionStyling {
+    &_active {
+      cursor: pointer;
+      border: 1px solid $general-bg;
+      border-radius: 4px;
+      background: $general-bg;
+      padding: 10px;
+    }
+    &_inactive {
+      cursor: pointer;
+      padding: 11px;
+    }
+  }
+  &_iconbg {
+    &_inactive {
+      padding: 3px 6px 5px 6px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+    }
+  }
+  &_text {
+    &_active {
+      color: $primaryColor;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    &_inactive {
+      color: $Shade_11;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+}
+
+#siteDropdown {
+  margin-left: -12px;
+}
+
+.mat-option:after {
+  content: "";
+  width: 100%;
+  border-bottom: solid 1px $Shade_1;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  top: calc(3em - 2px);
+}
+
+.sideNavbar_navCard {
+  .select-site {
+    padding: 0;
+    .mat-form-field-infix {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row-reverse;
+      .mat-select {
+        padding-left: 20px;
+        .mat-select-value {
+          color: $Shade_10 !important;
+          padding-left: 15px !important;
+        }
+        .mat-select-arrow-wrapper {
+          transform: translateY(-10%);
+        }
+      }
+      .mat-form-field-label-wrapper {
+        position: static;
+        width: auto;
+        label {
+          width: 20%;
+          position: absolute;
+          top: 18px;
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 18px;
+          align-items: center;
+          letter-spacing: 0.0375em;
+          color: $primaryColor;
+          transform: none !important;
+          margin-top: -18px;
+        }
+      }
+    }
+    .mat-form-field-flex {
+      border: 2px solid $primaryColor !important;
+      background: $SecondaryColor;
+      border-radius: 4px;
+      padding-top: 5px;
+    }
+  }
+}
+
+.sideNavbar_navCard {
+  // .menu:hover {
+  //   ~.menu.active {
+  //     display: none  !important;
+  //   }
+  // }
+  .menu {
+    cursor: pointer;
+    padding: 10px;
+    .img-bg {
+      margin-right: 5px;
+      background: $general-bg;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .icon {
+        height: 14px;
+        width: 14px;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        &.admin-link {
+          background-image: url(/assets/SideCol-Navbar/admin.svg);
+        }
+        &.device-sim-link {
+          background-image: url(/assets/SideCol-Navbar/devices.svg);
+        }
+        &.services-link {
+          background-image: url(/assets/SideCol-Navbar/services.svg);
+        }
+        &.small-cells-link {
+          background-image: url(/assets/SideCol-Navbar/smallCells.svg);
+        }
+        &.device-groups-link {
+          background-image: url(/assets/SideCol-Navbar/deviceGroups.svg);
+        }
+        &.slices-link {
+          background-image: url(/assets/SideCol-Navbar/slices.svg);
+        }
+        &.audit-link {
+          background-image: url(/assets/SideCol-Navbar/slices.svg);
+        }
+      }
+      .label {
+        color: $Shade_11;
+        font-family: "Inter", sans-serif;
+        font-size: 14px !important;
+        font-weight: 500;
+        margin-left: -20px;
+      }
+    }
+
+    &.inActive {
+      .img-bg {
+        margin-right: 5px;
+        background: $general-bg;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        .icon {
+          height: 14px;
+          width: 14px;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          &.admin-link {
+            background-image: url(/assets/SideCol-Navbar/admin.svg);
+          }
+          &.device-sim-link {
+            background-image: url(/assets/SideCol-Navbar/devices.svg);
+          }
+          &.services-link {
+            background-image: url(/assets/SideCol-Navbar/services.svg);
+          }
+          &.small-cells-link {
+            background-image: url(/assets/SideCol-Navbar/smallCells.svg);
+          }
+          &.device-groups-link {
+            background-image: url(/assets/SideCol-Navbar/deviceGroups.svg);
+          }
+          &.slices-link {
+            background-image: url(/assets/SideCol-Navbar/slices.svg);
+          }
+          &.audit-link {
+            background-image: url(/assets/SideCol-Navbar/slices.svg);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      border-radius: 4px;
+      background: $general-bg;
+      .img-bg {
+        background: $primaryColor;
+        .icon {
+          &.admin-link {
+            background-image: url(/assets/SideCol-Navbar/admin-active.svg);
+          }
+          &.device-sim-link {
+            background-image: url(/assets/SideCol-Navbar/devices-active.svg);
+          }
+          &.services-link {
+            background-image: url(/assets/SideCol-Navbar/services-active.svg);
+          }
+          &.small-cells-link {
+            background-image: url(/assets/SideCol-Navbar/smallCells-active.svg);
+          }
+          &.device-groups-link {
+            background-image: url(/assets/SideCol-Navbar/deviceGroups-active.svg);
+          }
+          &.slices-link {
+            background-image: url(/assets/SideCol-Navbar/slices-active.svg);
+          }
+          &.audit-link {
+            background-image: url(/assets/SideCol-Navbar/slices-active.svg);
+          }
+        }
+      }
+
+      .label {
+        font-family: Inter;
+        color: $primaryColor;
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+    &.active {
+      border-radius: 4px;
+      background: $general-bg;
+      .img-bg {
+        background: $primaryColor;
+        .icon {
+          &.admin-link {
+            background-image: url(/assets/SideCol-Navbar/admin-active.svg);
+          }
+          &.device-sim-link {
+            background-image: url(/assets/SideCol-Navbar/devices-active.svg);
+          }
+          &.services-link {
+            background-image: url(/assets/SideCol-Navbar/services-active.svg);
+          }
+          &.small-cells-link {
+            background-image: url(/assets/SideCol-Navbar/smallCells-active.svg);
+          }
+          &.device-groups-link {
+            background-image: url(/assets/SideCol-Navbar/deviceGroups-active.svg);
+          }
+          &.slices-link {
+            background-image: url(/assets/SideCol-Navbar/slices-active.svg);
+          }
+          &.audit-link {
+            background-image: url(/assets/SideCol-Navbar/slices-active.svg);
+          }
+        }
+      }
+
+      .label {
+        font-family: Inter;
+        color: $primaryColor;
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// .menu:hover {
+//   .menu.active {
+//     background: none;
+//     .img-bg {
+//       margin-right: 5px;
+//       background: $general-bg;
+//       border-radius: 50%;
+//       width: 26px;
+//       height: 26px;
+//       padding: 5px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       position: relative;
+//       .icon {
+//         height: 14px;
+//         width: 14px;
+//         background-repeat: no-repeat;
+//         position: absolute;
+//         top: 6px;
+//         left: 6px;
+//         &.admin-link {
+//           background-image: url(/assets/SideCol-Navbar/admin.svg);
+//         }
+//         &.device-sim-link {
+//           background-image: url(/assets/SideCol-Navbar/devices.svg);
+//         }
+//         &.services-link {
+//           background-image: url(/assets/SideCol-Navbar/services.svg);
+//         }
+//         &.small-cells-link {
+//           background-image: url(/assets/SideCol-Navbar/smallCells.svg);
+//         }
+//         &.device-groups-link {
+//           background-image: url(/assets/SideCol-Navbar/deviceGroups.svg);
+//         }
+//         &.slices-link {
+//           background-image: url(/assets/SideCol-Navbar/slices.svg);
+//         }
+//         &.audit-link {
+//           background-image: url(/assets/SideCol-Navbar/slices.svg);
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,193 @@
+/*
+ * SPDX-FileCopyrightText: 2022-present Open Networking Foundation <info@opennetworking.org>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// General Colors
+
+$primaryColor: #0063f7;
+$SecondaryColor: #ffffff;
+$general-bg: #edf4ff;
+
+// Alert Colors
+
+$AlertMedium: #fb8500;
+$AlertMediumLight: #ffbd72;
+$AlertCritical: #ef233c;
+$AlertSuccess: #06d6a0;
+
+// button Colors
+
+$buttonMedium: #859cbe;
+
+// Shades from $SecondaryColor to $PrimaryColor (Order: Light to Dark)
+
+$Shade_0: #edf4ff;
+$Shade_1: #c9deff;
+$Shade_2: #97c1ff;
+$Shade_3: #6ea6ff;
+$Shade_4: #418cff;
+$Shade_5: #0062ff;
+$Shade_6: #054ada;
+$Shade_7: #0530ad;
+$Shade_8: #061f80;
+$Shade_9: #051243;
+$Shade_10: #000000;
+$Shade_11: #3c4257;
+$Shade_12: #a3a3a3;
+$Shade_13: #d8d8d8;
+$Shade_14: #dba5f9;
+
+//Text-Colors
+
+$uploadTextColor: #004fc4;
+
+// Form-fields
+
+.form-control:focus {
+  border-color: $primaryColor !important;
+  box-shadow: none;
+}
+
+.form-field-big {
+  height: 48px;
+  border-bottom: 1px solid $Shade_11;
+  margin-top: 8px;
+}
+
+.dashboard {
+  &__device-icon {
+    color: $SecondaryColor;
+  }
+  &__cell-icon {
+    // color: white;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    min-height: 200px;
+    min-width: 250px;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    &__centered {
+      text-align: center;
+    }
+    &__details {
+      color: $primaryColor;
+      margin-top: auto;
+    }
+    &__site {
+      color: $Shade_11;
+      font-weight: 600;
+      &--big {
+        font-size: 16px;
+      }
+    }
+    &__small-cell {
+      color: $SecondaryColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 86px;
+      min-height: 28px;
+      border-radius: 27px;
+      background: $AlertSuccess;
+      gap: 5px;
+      font-size: 600;
+      align-self: center;
+      padding: 5px 10px;
+    }
+    &__device {
+      font-weight: 600;
+      font-size: 16px;
+      color: $primaryColor;
+    }
+  }
+}
+
+.ml-5 {
+  margin-left: 5rem !important;
+}
+
+.ml-6 {
+  margin-left: 6rem !important;
+}
+
+.mat-card {
+  border-radius: 6px !important;
+  padding: 8px !important;
+  box-shadow: none !important;
+}
+
+.is-invalid {
+  border: 1px solid #dc3545;
+}
+
+.error-field {
+  color: $AlertCritical;
+}
+
+// * mixins for device-groups and slices stepper label styling
+
+@mixin styleEditedStepIcon($index) {
+  .mat-horizontal-stepper-header:nth-child(#{$index}) {
+    .mat-step-icon:not(.mat-step-icon-selected) {
+      background-color: $AlertSuccess;
+      height: 8px;
+      width: 8px;
+    }
+  }
+}
+
+@mixin styleEditedSteplabel($index) {
+  .mat-horizontal-stepper-header:nth-child(#{$index}) {
+    .mat-step-label:not(.mat-step-icon-selected) {
+      color: $Shade_11;
+      font-family: "Inter";
+      font-weight: 400;
+      font-size: 28px;
+      overflow: unset;
+    }
+  }
+}
+
+@mixin styleStepLine($index) {
+  .mat-horizontal-stepper-header {
+    & + .mat-stepper-horizontal-line:nth-child(#{$index}) {
+      // height: 2px;
+      // background-image: linear-gradient(to right, #00b495, #00aeea);
+      background-color: $Shade_11;
+    }
+  }
+}
+
+.last-edited-step-1 {
+  @include styleEditedStepIcon(1);
+  @include styleEditedSteplabel(1);
+  @include styleStepLine(2);
+}
+
+.last-edited-step-2 {
+  @include styleEditedStepIcon(1);
+  @include styleEditedSteplabel(1);
+  @include styleEditedStepIcon(3);
+  @include styleEditedSteplabel(3);
+  @include styleStepLine(2);
+  @include styleStepLine(4);
+}
+
+.last-edited-step-3 {
+  @include styleEditedStepIcon(1);
+  @include styleEditedSteplabel(1);
+  @include styleEditedStepIcon(3);
+  @include styleEditedSteplabel(3);
+  @include styleEditedStepIcon(5);
+  @include styleEditedSteplabel(5);
+  @include styleStepLine(2);
+  @include styleStepLine(4);
+  @include styleStepLine(6);
+}

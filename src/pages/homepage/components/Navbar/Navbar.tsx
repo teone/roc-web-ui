@@ -53,7 +53,7 @@ const Navbar: FC<NavbarProps> = () => {
   );
 
   return (
-    <div className="Navbar">
+    <div className="Navbar" data-testid="Navbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light aether-bgColor">
         {/*Logo*/}
         <div className="container-fluid aether-bgColor">

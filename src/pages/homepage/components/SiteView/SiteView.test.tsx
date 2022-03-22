@@ -1,16 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Navbar from './Navbar';
+import SiteView from './SiteView';
 import { Provider } from "react-redux";
 import { store } from "../../../../store";
 
-describe('<Navbar />', () => {
+describe('<SiteView />', () => {
   test('it should mount', () => {
-    render(<Provider store={store}><Navbar /></Provider>);
+    render(<Provider store={store}><SiteView /></Provider>);
     
-    const navbar = screen.getByTestId('Navbar');
+    const siteView = screen.getByTestId('SiteView');
 
-    expect(navbar).toBeInTheDocument();
+    expect(siteView).toBeInTheDocument();
   });
 });

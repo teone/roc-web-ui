@@ -1,13 +1,17 @@
 import React from "react";
 import Navbar from "./pages/homepage/components/Navbar/Navbar";
-import Dashboard from "./pages/homepage/components/Dashboard/Dashboard";
+import HomepageContainer from "./pages/homepage/HomepageContainer";
+import { Provider } from "react-redux";
+import {store} from "./store"
 
 function App() {
   return (
-    <main>
-      <Navbar />
-      <Dashboard/>
-    </main>
+    <Provider store={store}>
+      <main data-testid="App">
+        <Navbar />
+        <HomepageContainer />
+      </main>
+    </Provider>
   );
 }
 

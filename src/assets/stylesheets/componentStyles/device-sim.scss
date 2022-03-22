@@ -1,0 +1,779 @@
+/*
+ * SPDX-FileCopyrightText: 2022-present Open Networking Foundation <info@opennetworking.org>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+.aether-add-active-device {
+  .add-active {
+    height: 48px;
+    width: 240px;
+    color: $SecondaryColor !important;
+    background: $primaryColor !important;
+    margin-top: -3.9px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin: 0 auto;
+    display: inherit;
+    position: relative;
+    border-radius: 4px;
+    &:after {
+      content: "+";
+      position: absolute;
+      right: 8px;
+      font-size: 31px;
+      top: 10px;
+    }
+  }
+  .button-medium-14-device-sim {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.device-details {
+  text-align: center;
+  color: $primaryColor;
+  cursor: pointer;
+  &.close {
+    max-width: 9%;
+    text-align: center;
+    color: $AlertCritical;
+  }
+}
+
+.device-sims-block {
+  width: 98%;
+}
+
+.device-sim-view {
+  &-col-2 {
+    flex: 0 0 auto;
+    width: 15.666667%;
+  }
+  // width: 90%;
+  // padding-left: 10px;
+  // max-width: 88%;
+  margin-top: 40px;
+  .aether-sideCol-NavCard {
+    margin-left: 0 !important;
+    width: auto !important;
+  }
+  .right-section {
+    position: relative;
+    padding-left: 0px;
+    &-col-lg-9 {
+      flex: 0 0 auto;
+      width: 72%;
+      @media screen and (min-width: 1300px) {
+        flex: 0 0 auto;
+        width: 73%;
+      }
+      @media screen and (min-width: 1630px) {
+        flex: 0 0 auto;
+        width: 74%;
+      }
+    }
+    .sec-1 {
+      .title-tab {
+        margin-top: -4px;
+        .title-block {
+          color: $Shade_2;
+          font-family: Inter;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 28px;
+          line-height: 36px;
+          cursor: pointer;
+          &.active {
+            color: $primaryColor;
+            font-weight: 600;
+          }
+          &.device-sim-tab {
+            padding-right: 40px;
+          }
+        }
+      }
+      .inventory-block {
+        padding-right: 40px;
+        .device-switch {
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+          padding: 10px 20px 10px 20px;
+        }
+        .sims-switch {
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+          padding: 10px 20px 10px 20px;
+        }
+        &:not(.active) {
+          .sims-btn {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            background: $Shade_2;
+            color: $SecondaryColor;
+          }
+          // .device-btn {
+          //   border-top-right-radius: 8px;
+          //   border-bottom-right-radius: 8px;
+          //   // background: $Shade_2;
+          //   // color: $SecondaryColor;
+          // }
+        }
+        &.in-active {
+          pointer-events: none;
+        }
+      }
+      .cancelled-sims {
+        margin-top: 2px;
+      }
+    }
+
+    .device-detail-card,
+    .device-sims-detail-card {
+      margin-top: 15px !important;
+      padding: 0px 0 0 10px !important;
+      min-height: 81px;
+      align-items: center;
+      .vector {
+        padding: 4px 10px 0 0;
+        .vector-bg {
+          height: 56px;
+          width: 56px;
+          background: $Shade_0;
+          border-radius: 50%;
+          position: relative;
+          &:after {
+            content: "";
+            background: $Shade_2;
+            height: 58px;
+            width: 2px;
+            position: absolute;
+            right: -10px;
+          }
+        }
+
+        img {
+          position: absolute;
+          top: 10px;
+          left: 12px;
+          height: 32px;
+          width: 32px;
+        }
+      }
+      .device-details-blocks {
+        .title {
+          font-family: Inter;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+        }
+        .desc {
+          color: $Shade_11;
+          font-family: Inter;
+          font-weight: 500;
+          font-style: normal;
+          font-size: 14px;
+          text-align: left;
+          padding-top: 6px;
+        }
+      }
+      .device-details-view-edit {
+        text-align: left;
+        max-width: 5%;
+        color: $primaryColor;
+        margin-left: auto;
+        cursor: pointer;
+        &-close {
+          text-align: left;
+          max-width: 5%;
+          color: $AlertCritical;
+        }
+      }
+      // .device-progress-bar {
+      //   height: 6px;
+      // }
+      .connected {
+        color: $SecondaryColor !important;
+        background: $AlertSuccess !important;
+        border-radius: 15px !important;
+        margin-top: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px 10px 5px 10px;
+        font-size: 14px;
+        &.offline {
+          background: $AlertCritical !important;
+        }
+        &.cancelled {
+          margin-left: auto !important;
+        }
+      }
+    }
+    .cancelled-sims-block,
+    .inventory-sims-block {
+      margin-top: 4px;
+      max-width: 98%;
+      .device-detail-card {
+        margin-top: 0 !important;
+      }
+    }
+    .inventory-device-block {
+      max-width: 98%;
+    }
+  }
+}
+.device-sims-detail-card {
+  .device-sims-details {
+    margin-left: auto;
+    cursor: pointer;
+    &.in-active-link {
+      pointer-events: none;
+    }
+  }
+  .device-sims-details-view-edit {
+    margin-left: initial !important;
+    cursor: pointer;
+    &.in-active-link {
+      pointer-events: none;
+    }
+  }
+}
+
+/*common css*/
+.button-medium-14 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+/*FORM KARTHIK*/
+
+// Activate new device classes.
+
+.forms-block {
+  .form-content {
+    border-radius: 5px;
+    background: $Shade_0;
+    padding: 32px 0px 60px 32px;
+  }
+  .activate-title {
+    color: $Shade_11;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .activate-or {
+    margin-top: 3rem;
+  }
+  .activate-sim-title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.00625em;
+    color: $Shade_10;
+  }
+  .activate-sim-subtitle1 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $Shade_11;
+    display: block;
+  }
+  .cancel-sim {
+    color: $primaryColor;
+    cursor: pointer;
+    padding: 40px 0px 0 15px;
+  }
+
+  .browse-label {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $Shade_10;
+  }
+  .browse {
+    border: 1px solid $primaryColor;
+    border-radius: 4px;
+    color: $primaryColor;
+    padding: 12px;
+  }
+  .browse-searchIcon {
+    margin-left: 3.75rem;
+  }
+  // .browse-label-inputField {
+  //   width: 9.5rem;
+  // }
+  .activate-device-title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.00625em;
+    color: $Shade_10;
+  }
+  .form-field-title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $Shade_11;
+  }
+
+  .activate-device-subtitle2 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $Shade_10;
+  }
+  .activate-device-subtitle2-button {
+    width: 10rem;
+    border: 1px solid $primaryColor;
+    border-radius: 4px;
+    color: $primaryColor;
+    padding: 14px;
+
+    &-searchIcon {
+      margin-left: 3.75rem;
+    }
+  }
+
+  // .activate-device-subtitle2-inputField {
+  //   width: 9.5rem;
+  // }
+  &.active-new-device-form {
+    .add-plus {
+      margin-left: auto;
+      position: relative;
+      margin-top: 15px;
+      div {
+        position: absolute;
+        right: 40px;
+        bottom: 10px;
+        color: $primaryColor;
+      }
+    }
+  }
+  .mat-card-actions {
+    margin-bottom: 0;
+    align-items: center;
+    .add {
+      color: $SecondaryColor;
+      float: right;
+      height: 49px;
+      width: 108px;
+      text-align: start;
+      margin-right: 1rem;
+      // border: 1px solid $primaryColor;
+      border-radius: 4px;
+      background: $primaryColor;
+    }
+    .cancel {
+      color: $primaryColor;
+      float: right;
+      height: 49px;
+      width: 108px;
+      text-align: start;
+      margin-right: 2rem;
+      border: 1px solid $primaryColor;
+      border-radius: 4px;
+      background: $SecondaryColor;
+    }
+    .button-sec {
+      margin-left: auto;
+      padding-right: 10px;
+      .add-button-gray {
+        background-color: $Shade_12;
+      }
+    }
+    .device-sim-item-delete {
+      color: $AlertCritical;
+      align-items: center;
+      cursor: pointer;
+      padding-left: 15px;
+      .delete-label {
+        padding: 2px 0 0 6px;
+      }
+    }
+    .down-up-load {
+      padding-left: 20px;
+
+      .download-template,
+      .upload-bulk {
+        cursor: pointer;
+        padding-right: 20px;
+        color: $primaryColor;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        img {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  .bottom-button {
+    padding: 0px;
+    margin: 0px;
+  }
+  .info-block {
+    padding-left: 10px;
+    .info-text {
+      padding-left: 6px;
+      font-size: 12px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 16px;
+      span {
+        font-size: 14px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        color: $primaryColor;
+        line-height: 21px;
+      }
+    }
+  }
+  .device-sims-detail-view-details-card-form {
+    .section-one {
+      margin-bottom: 15px;
+      align-items: center;
+      .title {
+        color: $Shade_11;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+      }
+      .progress-bar-tabs {
+        margin-left: auto;
+        padding-right: 30px;
+        .one-day,
+        .one-week {
+          font-family: Inter;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.01em;
+          padding: 0 8px 0 8px;
+          cursor: pointer;
+          &.active {
+            color: $primaryColor;
+            border-bottom: 3px solid $primaryColor;
+            font-weight: 600;
+          }
+        }
+      }
+      .legends {
+        color: $Shade_11;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.0375em;
+        padding-right: 25px;
+      }
+      .connected-event,
+      .bad-event,
+      .in-session {
+        color: $Shade_11;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+        padding-right: 20px;
+      }
+    }
+    .progress-bar-sec {
+      padding: 0 30px 0 15px;
+      margin: 30px 0 30px 0;
+      .last-Week-dates {
+        justify-content: space-between;
+        span {
+          color: $Shade_4;
+          p {
+            margin: 0px;
+          }
+        }
+        .selected-date {
+          border-bottom: 1px solid $primaryColor;
+          width: 40px;
+        }
+      }
+    }
+    .button-sec {
+      .ping-device {
+        color: $primaryColor;
+        height: 45px;
+        width: 136px;
+        padding-left: 12px;
+        text-align: start;
+        margin-right: 1rem;
+        border: 1px solid $primaryColor;
+        border-radius: 4px;
+        margin-left: auto;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+      }
+    }
+    .ping-failed {
+      .failed-link {
+        color: $AlertCritical;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        margin-left: auto;
+        margin: 1rem 1rem 0 auto;
+        cursor: pointer;
+      }
+      .zoom-filed {
+        .toggle-less {
+          border: 1px solid $primaryColor;
+          border-bottom-left-radius: 4px;
+          border-top-left-radius: 4px;
+          width: 30px;
+        }
+        .toggle-more {
+          border: 1px solid $primaryColor;
+          border-bottom-right-radius: 4px;
+          border-top-right-radius: 4px;
+          width: 30px;
+        }
+        img {
+          width: 10px;
+        }
+      }
+    }
+  }
+  .device-sims-detail-view-details-card-history {
+    .content {
+      margin: 5px 30px 5px 5px;
+      .label {
+        color: $Shade_12;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+      }
+      .details {
+        color: $Shade_11;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0.00625em;
+        padding-top: 5px;
+        word-break: break-word;
+      }
+    }
+  }
+  &.device-sims-detail-view-edit-form,
+  &.device-sims-detail-view-details-form {
+    border-top: 1px solid $Shade_2;
+    margin-top: -4px;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0 !important;
+    padding-top: 0;
+  }
+  input.form-control {
+    border-radius: 0;
+    // border-bottom: 0.5px solid $Shade_11;
+  }
+  &-deviceSim-edit-form-spacings {
+    padding: 8px 32px 24px 32px;
+  }
+}
+.v-hidden {
+  visibility: hidden;
+}
+
+// temp classes
+
+.add-new-device-form {
+  background: $Shade_0;
+}
+
+.progress {
+  height: 1rem;
+  background-color: $SecondaryColor;
+  border-radius: 22px;
+  &-hours {
+    &-title1 {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &-title2 {
+      text-align: center;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &-title3 {
+      margin-left: -1rem;
+      text-align: end;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.success {
+  &-dot {
+    background-color: $AlertSuccess !important;
+    width: 16px;
+    border-radius: 1rem;
+    height: 1rem;
+    &-abs {
+      position: absolute;
+      background-color: $AlertSuccess !important;
+      width: 16px;
+      border-radius: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &-bar {
+    background-color: $AlertSuccess !important;
+    width: 30%;
+    border-radius: 1rem;
+  }
+}
+
+.white-dot {
+  background-color: $SecondaryColor !important;
+  width: 16px;
+  height: 1rem !important;
+  border-radius: 1rem;
+  &-abs {
+    position: absolute;
+    background-color: $SecondaryColor !important;
+    width: 16px;
+    height: 1rem !important;
+    border-radius: 1rem;
+    margin-left: 2rem;
+  }
+}
+
+.danger-dot {
+  background-color: $AlertCritical !important;
+  width: 16px;
+  border-radius: 1rem;
+  height: 1rem;
+  &-abs {
+    position: absolute;
+    background-color: $AlertCritical !important;
+    width: 16px;
+    border-radius: 1rem;
+    height: 1rem;
+    margin-left: 12rem;
+  }
+}
+
+.dayChart {
+  // background-color: $primaryColor !important;
+  margin-top: -2rem;
+  rect {
+    rx: 10;
+    ry: 10;
+  }
+  circle {
+    min-width: 1px !important;
+  }
+}
+
+.randClass {
+  background-color: red !important;
+}
+
+.mat-select-box {
+  h4 {
+    margin: 0 0 10px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .mat-form-field-wrapper {
+    height: 48px;
+  }
+  .mat-form-field-flex {
+    background: $Shade_0;
+  }
+  .mat-form-field-infix {
+    background: $SecondaryColor;
+    // width: 160px;
+    height: 48px;
+    // border-bottom: 1px solid;
+  }
+  .mat-form-field-label-wrapper {
+    left: 8px;
+    top: -8px;
+  }
+  .mat-select-arrow-wrapper {
+    display: inline-block !important;
+  }
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    padding: 0;
+  }
+}
+
+.highlight {
+  // border-top-right-radius: 8px;
+  // border-bottom-right-radius: 8px;
+  color: $SecondaryColor;
+  background: $primaryColor;
+  border: none;
+}
+.normal {
+  color: $Shade_3;
+  background: $SecondaryColor;
+  // background: red;
+  border: none;
+}

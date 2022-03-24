@@ -37,6 +37,7 @@ const gQLSiteQuery = gql`
       alerts
       slices {
         id
+        name
       }
       simCards {
         name

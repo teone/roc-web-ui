@@ -1,19 +1,17 @@
 import React, { FC, useEffect } from "react";
 import "./SiteSelector.scss";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
-import {
-  allSites, loadSites, select,
-  selectedSite,
-  Site, siteLoadStatus
-} from "../../../../state/reducers/siteReducer";
+import { allSites, loadSites, select, selectedSite, siteLoadStatus } from "../../../../state/reducers/siteReducer";
 import deviceSvg from "../../../../assets/AdminPanel/device.svg";
 import sliceSvg from "../../../../assets/AdminPanel/slices.svg";
 import serviceSvg from "../../../../assets/AdminPanel/service.svg";
 import redAlertSvg from "../../../../assets/AdminPanel/red-alert.svg";
 import blueAlertSvg from "../../../../assets/AdminPanel/alert.svg";
-import selectGraySvg from "../../../../assets/AdminPanel/select.svg"
-import selectBlueSvg from "../../../../assets/AdminPanel/selected-card.svg"
-import { StateIdle } from "../../../../state/loadStatuses";
+import selectGraySvg from "../../../../assets/AdminPanel/select.svg";
+import selectBlueSvg from "../../../../assets/AdminPanel/selected-card.svg";
+import { StateIdle, StateLoading } from "../../../../state/loadStatuses";
+import { Site } from "../../../../types";
+import Loader from "../../../../common/components/Loader/Loader";
 
 interface DashboardProps {}
 
@@ -38,7 +36,7 @@ const SiteSelector: FC<DashboardProps> = () => {
       <div className="col-xl-3 col-lg-5 col-md-6 col-sm-7 ctm-cols">
         <div
           className={`card card-stats ${
-            site.id === s.id ? "card-selected mat-elevation-z4" : ""
+            site && site.id === s.id ? "card-selected mat-elevation-z4" : ""
           }`}
           onClick={() => onSelectCard(s)}
         >
@@ -58,7 +56,7 @@ const SiteSelector: FC<DashboardProps> = () => {
                   </div>
                   <div className="card-category">
                     <p className="">
-                      {s.devices.length} Devices
+                      {s.devices ? s.devices.length : 0} Devices
                       <span>10 Unprovisioned</span>
                     </p>
                   </div>
@@ -70,7 +68,7 @@ const SiteSelector: FC<DashboardProps> = () => {
                     <img src={sliceSvg} />
                   </div>
                   <div className="card-category">
-                    <p className="">{s.slices.length} Slices</p>
+                    <p className="">{s.slices ? s.slices.length : 0} Slices</p>
                   </div>
                 </div>
               </div>
@@ -81,8 +79,7 @@ const SiteSelector: FC<DashboardProps> = () => {
                   </div>
                   <div className="card-category">
                     <p className="">
-                      {/*{{ getTotalService(site.slices, sitesResponse.applications) }}*/}
-                      Services
+                      0 Services
                     </p>
                   </div>
                 </div>
@@ -99,13 +96,17 @@ const SiteSelector: FC<DashboardProps> = () => {
               </div>
             </div>
             <div className="check-box-container">
-              <img src={site.id === s.id ? selectBlueSvg : selectGraySvg} />
+              <img src={site && site.id === s.id ? selectBlueSvg : selectGraySvg} />
             </div>
           </div>
         </div>
       </div>
     </React.Fragment>
   ));
+
+  if (loadStatus === StateLoading) {
+    return (<Loader/>)
+  }
 
   return (
     <div className="SiteSelector" data-testid="SiteSelector">

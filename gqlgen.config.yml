@@ -1,0 +1,6 @@
+schema: ../roc-graphql-demo/graph/schema.graphqls
+generates:
+  ./src/types.ts:
+    plugins:
+      - typescript
+      - typescript-operations

@@ -27,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "types": "graphql-codegen --config ./gqlgen.config.yml"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +49,9 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/typescript": "^2.4.8",
+    "@graphql-codegen/typescript-operations": "^2.3.5",
     "@types/lodash": "^4.14.180",
     "generate-react-cli": "^7.1.0",
     "sass": "^1.49.9"

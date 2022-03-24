@@ -2,7 +2,7 @@ import { applyMiddleware, combineReducers, configureStore, createStore } from "@
 import thunk from 'redux-thunk';
 
 import { siteSlice } from "./reducers/siteReducer";
-import { createGQLClient } from "./gql-client";
+import { createGQLClient } from "../api/gql-client";
 import { composeWithDevTools } from "@reduxjs/toolkit/dist/devtoolsExtension";
 
 export const store = configureStore(

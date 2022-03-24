@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./pages/homepage/components/Navbar/Navbar";
 import HomepageContainer from "./pages/homepage/HomepageContainer";
 import { Provider } from "react-redux";
-import {store} from "./store"
+import {store} from "./state/store"
 
 function App() {
   return (

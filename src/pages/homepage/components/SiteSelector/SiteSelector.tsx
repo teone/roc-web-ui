@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import "./SiteSelector.scss";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import {
-  allSites, select,
+  allSites, loadSites, select,
   selectedSite,
-  Site
+  Site, siteLoadStatus
 } from "../../../../state/reducers/siteReducer";
 import deviceSvg from "../../../../assets/AdminPanel/device.svg";
 import sliceSvg from "../../../../assets/AdminPanel/slices.svg";
@@ -13,13 +13,21 @@ import redAlertSvg from "../../../../assets/AdminPanel/red-alert.svg";
 import blueAlertSvg from "../../../../assets/AdminPanel/alert.svg";
 import selectGraySvg from "../../../../assets/AdminPanel/select.svg"
 import selectBlueSvg from "../../../../assets/AdminPanel/selected-card.svg"
+import { StateIdle } from "../../../../state/loadStatuses";
 
 interface DashboardProps {}
 
 const SiteSelector: FC<DashboardProps> = () => {
   const site = useAppSelector(selectedSite);
   const sites = useAppSelector(allSites);
+  const loadStatus = useAppSelector(siteLoadStatus)
   const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    if (loadStatus === StateIdle) {
+      dispatch(loadSites())
+    }
+  }, [siteLoadStatus, dispatch])
 
   const onSelectCard = (site: Site) => {
     dispatch(select(site.id))

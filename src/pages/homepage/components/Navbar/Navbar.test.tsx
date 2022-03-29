@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Navbar from './Navbar';
 import { Provider } from "react-redux";
-import { store } from "../../../../store";
+import { store } from "../../../../state/store";
 
 describe('<Navbar />', () => {
   test('it should mount', () => {

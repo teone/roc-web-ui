@@ -53,3 +53,9 @@ please use `https://www.npmjs.com/package/generate-react-cli`, eg:
 ```shell
  npx generate-react-cli c -p src/pages/homepage/components/ Navbar
 ```
+
+## Regenerate graphQL types
+
+```shell
+npm run types 
+```

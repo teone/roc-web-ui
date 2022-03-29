@@ -1,4 +1,4 @@
-schema: ../roc-graphql-demo/graph/schema.graphqls
+schema: ../aether-graphql/graph/schema.graphqls
 generates:
   ./src/types.ts:
     plugins:

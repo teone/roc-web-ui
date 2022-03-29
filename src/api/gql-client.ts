@@ -17,7 +17,7 @@ export const createGQLClient = (): GraphQLClient => {
 
   const client = new ApolloClient({
     cache: cache,
-      uri: process.env.API_URL || "http://localhost:8080/query",
+      uri: process.env.API_URL || "http://localhost:8080/graphql",
     defaultOptions: {
       watchQuery: {
         fetchPolicy: 'no-cache',

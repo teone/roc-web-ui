@@ -22,8 +22,6 @@ const SiteView: FC<SiteViewProps> = () => {
   const [expandedPanel, setExpandedPanel] = useState<string | false>("");
   const [viewType, setViewType] = useState(logical);
 
-  console.log(site);
-
   const handleViewType = (
     event: React.MouseEvent<HTMLElement>,
     type: string

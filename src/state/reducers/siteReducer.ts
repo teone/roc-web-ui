@@ -28,27 +28,22 @@ const initialState: SiteState = {
   loadingError: undefined,
 };
 
-const gQLSiteQuery = gql`
-  query GetSites {
-    site {
+const gQLSitesQuery = gql`
+query Sites{
+  sites {
+    id
+    devices {
+      id
+    }
+    slices {
       id
       name
-      image
-      alerts
-      slices {
-        id
-        name
-      }
-      simCards {
-        name
-      }
-      simCardsCount
     }
   }
-`;
+}`
 
 export const loadSites = createAsyncThunk("sites/load", async () => {
-  const response = await gQLClient.query<unknown, Site[]>("site", gQLSiteQuery);
+  const response = await gQLClient.query<unknown, Site[]>("sites", gQLSitesQuery);
   return response;
 });
 

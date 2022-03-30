@@ -56,7 +56,15 @@ const SiteSelector: FC<DashboardProps> = () => {
   };
 
   const getAlertsFromSiteId = (id: Scalars["ID"]) => {
-    return 1;
+    switch (id) {
+      case "starbucks-newyork":
+      case "starbucks-seattle":
+        return 0;
+      case "acme-chicago":
+        return 4;
+      default:
+        return 1;
+    }
   };
 
   const content = sites.map((s, i) => (

@@ -32,6 +32,7 @@ const gQLSitesQuery = gql`
 query Sites{
   sites {
     id
+    name
     devices {
       id
     }
